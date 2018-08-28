@@ -3,15 +3,14 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <form @submit.prevent="startGame">
       <input type="text" v-model="newGame.playerName">
-
     </form>
-    <PlayerHand/>
+    <!-- <PlayerHand/> -->
     <EnemyHand/>
   </div>
 </template>
 
 <script>
-import PlayerHand from "@/components/PlayerHand";
+//import PlayerHand from "@/components/PlayerHand";
 import EnemyHand from "@/components/EnemyHand";
 
 export default {
@@ -35,12 +34,12 @@ export default {
     },
 
     startGame(){
-      this.$store.dispatch("startGame", this.newGame)
+      this.$store.dispatch("newGame", this.newGame)
     }
   },
 
   components: {
-    PlayerHand,
+    //PlayerHand,
     EnemyHand
   }
 };
