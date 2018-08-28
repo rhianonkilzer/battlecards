@@ -16,7 +16,7 @@ export default {
     computed:{
         enemyData(){
             if(this.$store.state.game.id){
-                return this.$store.state.game.players[1] || {}
+                return this.$store.state.game.players[1]
         }
         return {}
         }
@@ -24,6 +24,5 @@ export default {
     methods: {
 
     },
-    props: []
 };
 </script>
