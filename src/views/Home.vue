@@ -5,14 +5,14 @@
       <input type="text" v-model="newGame.playerName">
 
     </form>
-    <PlayerHand />
-    <EnemyHand />
+    <PlayerHand/>
+    <EnemyHand/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import PlayerHand from '@/components/PlayerHand.vue'
+import PlayerHand from "@/components/PlayerHand";
+import EnemyHand from "@/components/EnemyHand";
 
 export default {
   name: "home",
