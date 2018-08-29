@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+   
     <form @submit.prevent="startGame">
       <input type="text" v-model="newGame.playerName">
     </form>
     <div class="row">
-     <PlayerHand class="col-6"/> 
-    <EnemyHand class="col-6"/>
+     <PlayerHand class="col-12"/> 
+      <img alt="Battle Cards" src="../assets/logo-horizontal.png">
+    <EnemyHand class="col-12"/>
     </div>
   </div>
 </template>

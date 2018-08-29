@@ -1,7 +1,7 @@
 <template>
     <div class="player-hand">
 <div>
-{{playerData.name || ''}}
+<h1>{{playerData.name || ''}}</h1>
 </div>
     </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     computed: {
         playerData(){
             if(this.$store.state.game.id){
-                return this.$store.state.game.players[0]
+                return this.$store.state.game.players[1]
             }
             return{}
         }
@@ -26,3 +26,12 @@ export default {
     }
 }
 </script>
+<style scoped>
+    h1{
+        font-size: 1.8rem;
+        color: white;
+    }
+    .player-hand{
+        font-family: 'Nova Mono', monospace;
+    }
+</style>
