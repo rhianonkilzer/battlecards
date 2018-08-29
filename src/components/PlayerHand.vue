@@ -16,7 +16,7 @@ export default {
     computed: {
         playerData(){
             if(this.$store.state.game.id){
-                return this.$store.state.game.players[1]
+                return this.$store.state.game.players[0]
             }
             return{}
         }

@@ -4,8 +4,10 @@
     <form @submit.prevent="startGame">
       <input type="text" v-model="newGame.playerName">
     </form>
-     <PlayerHand/> 
-    <EnemyHand/>
+    <div class="row">
+     <PlayerHand class="col-6"/> 
+    <EnemyHand class="col-6"/>
+    </div>
   </div>
 </template>
 
