@@ -28,7 +28,6 @@ export default new Vuex.Store({
     getGame({commit, dispatch}, gameId){
       cardsApi.get('/'+gameId)
       .then(res=>{
-        debugger
         commit('setGame', res.data)
       })
     }

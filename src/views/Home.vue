@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <img alt="Vue logo" src="../assets/logo.png">
     <form @submit.prevent="startGame">
       <input type="text" v-model="newGame.playerName">
     </form>
-    <!-- <PlayerHand/> -->
+     <PlayerHand/> 
     <EnemyHand/>
   </div>
 </template>
 
 <script>
-//import PlayerHand from "@/components/PlayerHand";
+import PlayerHand from "@/components/PlayerHand";
 import EnemyHand from "@/components/EnemyHand";
 
 export default {
@@ -20,7 +20,7 @@ export default {
       playerHand: {},
       enemyHand: {},
       newGame: {
-        playerName: '',
+        playerName: "",
         opponents: 1,
         set: 4
       }
@@ -28,18 +28,16 @@ export default {
   },
   methods: {
     fight() {
-      this.$store.dispatch("fight", {
-      
-      });
+      this.$store.dispatch("fight", {});
     },
 
-    startGame(){
-      this.$store.dispatch("newGame", this.newGame)
+    startGame() {
+      this.$store.dispatch("newGame", this.newGame);
     }
   },
 
   components: {
-    //PlayerHand,
+    PlayerHand,
     EnemyHand
   }
 };
