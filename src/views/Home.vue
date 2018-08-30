@@ -1,6 +1,5 @@
 <template>
   <div class="home container-fluid">
-
     <div class="row">
       <div class="col-12">
         <img alt="Battle Cards" src="../assets/logo-horizontal.png">
@@ -10,13 +9,10 @@
           <input type="text" v-model="newGame.playerName">
         </form>
       </div>
-
       <PlayerHand class="col-12" />
       <div class="col-12 justify-content-center mt-5">
         <button class="fight-btn"> F I G H T </button>
       </div>
-
-
       <EnemyHand class="col-12 mt-5" />
     </div>
   </div>
@@ -59,8 +55,8 @@
   .fight-btn {
     font-size: 45px;
     font-family: 'Permanent Marker', cursive;
-    background-color: rgb(0, 0, 0);
-    color: rgb(94, 94, 94);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border-radius: 14px;
     border-radius: 14px;
     border-radius: 14px;

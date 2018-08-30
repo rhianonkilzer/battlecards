@@ -41,6 +41,7 @@
 <style scoped>
     .card{
         outline: white solid 1px;
+        background-color: rgb(58, 58, 58);
     }
     h1 {
         font-size: 1rem;

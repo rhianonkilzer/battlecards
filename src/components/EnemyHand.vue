@@ -47,6 +47,8 @@
 <style scoped>
     .card {
         outline: rgb(255, 255, 255) solid 1px;
+        background-color: rgb(66, 0, 0);
+        
     }
     .enemy-hand{
         font-family: 'Patrick Hand', cursive;
