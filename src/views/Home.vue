@@ -11,7 +11,7 @@
       </div>
       <PlayerHand class="col-12" />
       <div class="col-12 justify-content-center mt-5">
-        <button class="fight-btn"> F I G H T </button>
+        <button class="fight-btn">FIGHT</button>
       </div>
       <EnemyHand class="col-12 mt-5" />
     </div>
@@ -41,6 +41,7 @@
       },
 
       startGame() {
+      
         this.$store.dispatch("newGame", this.newGame);
       }
     },
@@ -55,12 +56,12 @@
   .fight-btn {
     font-size: 45px;
     font-family: 'Permanent Marker', cursive;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: rgb(24, 24, 24);
+    color: rgb(255, 255, 255);
     border-radius: 14px;
     border-radius: 14px;
     border-radius: 14px;
-    border: 5px solid #000000;
+    border: 5px solid rgb(32, 1, 1);
   }
 </style>
 

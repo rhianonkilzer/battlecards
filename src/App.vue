@@ -18,6 +18,6 @@
 }
 
 body{
-  background-color: #200101;
+  background-color: #000000;
 }
 </style>
