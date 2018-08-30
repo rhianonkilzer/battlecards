@@ -6,10 +6,10 @@
             </h2>
 
         </div>
-        <div class="row">
-            <div class="col-3 card" v-for="enemyCard in enemyData.hand" :key="enemyCard.id">
+        <div class="row justify-content-center">
+            <div class="col-2 card" v-for="enemyCard in enemyData.hand" :key="enemyCard.id">
                     <h1>{{enemyCard.name}}</h1>
-                <img :src="enemyCard.img" alt="">
+                <img :src="enemyCard.img" alt=""width="200" height="200">
                 {{enemyCard.health}}
                 {{enemyCard.attack}}
             </div>
@@ -49,7 +49,7 @@
         outline: rgb(255, 255, 255) solid 1px;
     }
     .enemy-hand{
-        font-family: 'Nova Mono', monospace;
+        font-family: 'Patrick Hand', cursive;
     }
     h1{
         font-size: 1rem;

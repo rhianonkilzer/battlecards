@@ -5,10 +5,10 @@
                 {{playerData.name || ''}}
             </h2>
         </div>
-        <div class="row">
-            <div class="col-3 card" v-for="playerCard in playerData.hand":key="playerCard.id">
+        <div class="row justify-content-center">
+            <div class="col-2 card" v-for="playerCard in playerData.hand":key="playerCard.id">
                 <h1>{{playerCard.name}}</h1>
-                <img :src="playerCard.img" alt="">
+                <img :src="playerCard.img" alt="" width="200" height="200">
                 {{playerCard.health}}
                 {{playerCard.attack}}
 
@@ -48,8 +48,9 @@
     }
     h2{
         font-size: 1.8rem;
+        color: white;
     }
     .player-hand {
-        font-family: 'Nova Mono', monospace;
+        font-family: 'Patrick Hand', cursive;
     }
 </style>
