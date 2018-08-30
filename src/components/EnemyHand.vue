@@ -10,6 +10,8 @@
             <div class="col-3 card" v-for="enemyCard in enemyData.hand" :key="enemyCard.id">
                     <h1>{{enemyCard.name}}</h1>
                 <img :src="enemyCard.img" alt="">
+                {{enemyCard.health}}
+                {{enemyCard.attack}}
             </div>
         </div>
     </div>
