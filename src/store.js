@@ -30,6 +30,7 @@ export default new Vuex.Store({
       .then(res=>{
         commit('setGame', res.data)
       })
-    }
+    },
+    
   }
 })

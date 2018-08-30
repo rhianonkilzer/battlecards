@@ -13,7 +13,7 @@
       <div class="col-12 justify-content-center mt-5">
         <button class="fight-btn">FIGHT</button>
       </div>
-      <EnemyHand class="col-12 mt-5" />
+      <EnemyHand class="col-12 mt-5" :click="setEnemyCard" />
     </div>
   </div>
 </template>
@@ -32,6 +32,10 @@
           playerName: "",
           opponents: 1,
           set: 4
+        },
+        attack: {
+          opponentId: '',
+          opponentCardId: ''
         }
       };
     },
@@ -43,8 +47,14 @@
       startGame() {
       
         this.$store.dispatch("newGame", this.newGame);
+      },
+      setEnemyCard(eId, oCId){
+        this.attack.opponentId = eId
+        this.attack.opponentCardId = oCId
       }
+
     },
+    
 
     components: {
       PlayerHand,
@@ -61,7 +71,7 @@
     border-radius: 14px;
     border-radius: 14px;
     border-radius: 14px;
-    border: 5px solid rgb(32, 1, 1);
+    border: 5px solid rgb(151, 119, 71);
   }
 </style>
 

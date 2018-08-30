@@ -18,6 +18,6 @@
 }
 
 body{
-  background-color: #000000;
+  background-image: linear-gradient(to top, #000000 0%, #ffffff 100%);
 }
 </style>

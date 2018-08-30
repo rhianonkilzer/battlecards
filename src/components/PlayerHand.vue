@@ -44,8 +44,9 @@
 </script>
 <style scoped>
     .card {
-        outline: rgb(32, 1, 1) solid 2px;
-        background-color: rgb(24, 24, 24);
+        outline: white solid 2px;
+        background-color: rgb(151, 119, 71);
+        cursor: pointer;
     }
 
     h1 {
@@ -55,11 +56,11 @@
 
     h2 {
         font-size: 1.8rem;
-        color: white;
+        color: rgb(255, 255, 255);
     }
 
     p {
-        color:  white;
+        color:  rgb(255, 255, 255);
     }
 
     .player-hand {
