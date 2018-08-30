@@ -1,9 +1,9 @@
 <template>
     <div class="player-hand">
         <div>
-            <h1>
+            <h2>
                 {{playerData.name || ''}}
-            </h1>
+            </h2>
         </div>
         <div class="row">
             <div class="col-3 card" v-for="playerCard in playerData.hand":key="playerCard.id">
@@ -20,6 +20,7 @@
         name: "PlayerHand",
         data() {
             return {}
+            
         },
         computed: {
             playerData() {
@@ -35,11 +36,16 @@
     }
 </script>
 <style scoped>
-    h1 {
-        font-size: 1.8rem;
-        color: white;
+    .card{
+        outline: white solid 1px;
     }
-
+    h1 {
+        font-size: 1rem;
+        color: rgb(0, 0, 0);
+    }
+    h2{
+        font-size: 1.8rem;
+    }
     .player-hand {
         font-family: 'Nova Mono', monospace;
     }

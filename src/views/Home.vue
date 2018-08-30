@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home container-fluid">
    
     <form @submit.prevent="startGame">
       <input type="text" v-model="newGame.playerName">

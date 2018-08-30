@@ -16,18 +16,7 @@
   text-align: center;
   color: #000000;
 }
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c2e30;
-}
-
-#nav a.router-link-exact-active {
-  color: #22573f;
-}
 body{
   background-color: #30050e;
 }
