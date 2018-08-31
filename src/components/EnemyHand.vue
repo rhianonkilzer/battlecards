@@ -14,12 +14,15 @@
 
                     <p>Health: {{enemyCard.health}}</p>
                     <p>Attack: {{enemyCard.attack}}</p>
+                    <p>Defense: {{enemyCard.defense}}</p>
                 </div>
                 <div v-else @click="changeActiveCard(enemyCard)">
                     <h1>Enemy</h1>
                     <img src="..//assets/02_legacy_back_ace.jpg" alt="card" width="200" height="250" class="image">
                     <p>Health: ?</p>
                     <p>Attack: ?</p>
+                    <p>Defense: ?</p>
+                   
                 </div>
             </div>
         </div>

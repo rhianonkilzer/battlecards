@@ -16,6 +16,7 @@
 
                     <p>Health: {{playerCard.health}}</p>
                     <p>Attack: {{playerCard.attack}}</p>
+                    <p>Defense: {{playerCard.defense}}</p>
                 </div>
 
             </div>

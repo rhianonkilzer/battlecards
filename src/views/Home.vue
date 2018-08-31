@@ -4,14 +4,14 @@
       <div class="col-12">
         <img alt="Battle Cards" src="../assets/logo-horizontal.png">
       </div>
-      <div class="col-12" v-if="game.winner">
+      <div class="col-12" v-if="!game.winner">
         <form @submit.prevent="startGame">
           <input type="text" v-model="newGame.playerName">
         </form>
       </div>
-      <div v-if="game.winner">
+      <div class="justify-content-center col-12" v-if="game.winner">
         <h1>WINNER</h1>
-        {{game.winner.name}}
+        <h3>{{game.winner.name}}</h3>
       </div>
       <PlayerHand class="col-12" v-if="!game.winner"/>
       <div class="col-12 justify-content-center mt-5" v-if="!game.winner">
