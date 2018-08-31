@@ -4,16 +4,20 @@
       <div class="col-12">
         <img alt="Battle Cards" src="../assets/logo-horizontal.png">
       </div>
-      <div class="col-12">
+      <div class="col-12" v-if="game.winner">
         <form @submit.prevent="startGame">
           <input type="text" v-model="newGame.playerName">
         </form>
       </div>
-      <PlayerHand class="col-12" />
-      <div class="col-12 justify-content-center mt-5">
-        <button class="fight-btn">FIGHT</button>
+      <div v-if="game.winner">
+        <h1>WINNER</h1>
+        {{game.winner.name}}
       </div>
-      <EnemyHand class="col-12 mt-5" :click="setEnemyCard" />
+      <PlayerHand class="col-12" v-if="!game.winner"/>
+      <div class="col-12 justify-content-center mt-5" v-if="!game.winner">
+        <button class="fight-btn" v-if="playerCard.id && enemyCard.id" @click="battle">FIGHT</button>
+      </div>
+      <EnemyHand class="col-12 mt-5" v-if="!game.winner"/>
     </div>
   </div>
 </template>
@@ -32,29 +36,48 @@
           playerName: "",
           opponents: 1,
           set: 4
-        },
-        attack: {
-          opponentId: '',
-          opponentCardId: ''
         }
       };
     },
+    computed: {
+      enemyCard() {
+        return this.$store.state.enemyCard
+      },
+      playerCard() {
+        return this.$store.state.playerCard
+      },
+      player() {
+        return this.$store.state.game.players[0]
+      },
+      enemy() {
+        return this.$store.state.game.players[1]
+      },
+      game(){
+        return this.$store.state.game
+      }
+    },
+
     methods: {
       fight() {
         this.$store.dispatch("fight", {});
       },
 
       startGame() {
-      
+
         this.$store.dispatch("newGame", this.newGame);
       },
-      setEnemyCard(eId, oCId){
-        this.attack.opponentId = eId
-        this.attack.opponentCardId = oCId
+      battle() {
+        let attackObject = {
+          playerId: this.player.id,
+          playerCardId: this.playerCard.id,
+          opponentId: this.enemy.id,
+          opponentCardId: this.enemyCard.id
+        }
+        this.$store.dispatch('battle', attackObject);
       }
 
     },
-    
+
 
     components: {
       PlayerHand,

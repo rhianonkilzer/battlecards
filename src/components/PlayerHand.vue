@@ -7,12 +7,16 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-2 card" v-for="playerCard in playerData.hand" :key="playerCard.id">
-                <h1>{{playerCard.name}}</h1>
-                <img :src="playerCard.img" alt="" width="200" height="200">
-                <p>
-                    Health: {{playerCard.health}}
-                </p>
-                <p>Attack: {{playerCard.attack}}</p>
+                <!-- <div @click="changeActiveCard(playerCard)" v-if="playerActiveCard.id == playerCard.id"> -->
+                <div @click="changePlayerCard(playerCard)">
+
+
+                    <h1>{{playerCard.name}}</h1>
+                    <img :src="playerCard.img" alt="" width="200" height="250">
+
+                    <p>Health: {{playerCard.health}}</p>
+                    <p>Attack: {{playerCard.attack}}</p>
+                </div>
 
             </div>
         </div>
@@ -35,10 +39,15 @@
                     return this.$store.state.game.players[0]
                 }
                 return {}
+            },
+            playerActiveCard() {
+                return this.$store.state.playerCard
             }
         },
         methods: {
-
+            changePlayerCard(playerCard) {
+                this.$store.dispatch('changePlayerCard', playerCard)
+            }
         }
     }
 </script>
@@ -60,7 +69,7 @@
     }
 
     p {
-        color:  rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
     }
 
     .player-hand {
