@@ -7,17 +7,18 @@
       <div class="col-12" v-if="!game.winner">
         <form @submit.prevent="startGame">
           <input type="text" v-model="newGame.playerName">
+          <button type="submit">Submit</button>
         </form>
       </div>
       <div class="justify-content-center col-12" v-if="game.winner">
         <h1>WINNER</h1>
         <h3>{{game.winner.name}}</h3>
       </div>
-      <PlayerHand class="col-12" v-if="!game.winner"/>
+      <PlayerHand class="col-12" v-if="!game.winner" />
       <div class="col-12 justify-content-center mt-5" v-if="!game.winner">
         <button class="fight-btn" v-if="playerCard.id && enemyCard.id" @click="battle">FIGHT</button>
       </div>
-      <EnemyHand class="col-12 mt-5" v-if="!game.winner"/>
+      <EnemyHand class="col-12 mt-5" v-if="!game.winner" />
     </div>
   </div>
 </template>
@@ -52,7 +53,7 @@
       enemy() {
         return this.$store.state.game.players[1]
       },
-      game(){
+      game() {
         return this.$store.state.game
       }
     },

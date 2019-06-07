@@ -8,21 +8,26 @@
         </div>
         <div class="row mb-3 justify-content-center">
             <div class="col-2 card" v-for="enemyCard in enemyData.hand" :key="enemyCard.id">
-                <div v-if="enemyActiveCard.id == enemyCard.id">
-                    <h1>{{enemyCard.name}}</h1>
-                    <img :src="enemyCard.img" alt="" width="200" height="250">
+                <div @click="changeActiveCard(enemyCard)">
+                    <div v-if="enemyActiveCard.id == enemyCard.id && enemyCard.visible">
+                        <h1>{{enemyCard.name}}</h1>
+                        <img :src="enemyCard.img" alt="" width="200" height="250">
 
-                    <p>Health: {{enemyCard.health}}</p>
-                    <p>Attack: {{enemyCard.attack}}</p>
-                    <p>Defense: {{enemyCard.defense}}</p>
-                </div>
-                <div v-else @click="changeActiveCard(enemyCard)">
-                    <h1>Enemy</h1>
-                    <img src="..//assets/02_legacy_back_ace.jpg" alt="card" width="200" height="250" class="image">
-                    <p>Health: ?</p>
-                    <p>Attack: ?</p>
-                    <p>Defense: ?</p>
-                   
+                        <p>Health: {{enemyCard.health}}</p>
+                        <p>Attack: {{enemyCard.attack}}</p>
+                        <p>Defense: {{enemyCard.defense}}</p>
+                    </div>
+                    <div v-else-if="enemyActiveCard.id == enemyCard.id">
+                        <h1>Enemy</h1>
+                        <img :src="enemyCard.img" alt="card" width="200" height="250" class="image">
+                        <p>Health: ?</p>
+                        <p>Attack: ?</p>
+                        <p>Defense: ?</p>
+                    </div>
+                    <div v-else>
+                        <img src="..//assets/02_legacy_back_ace.jpg" alt="card" width="200" height="250" class="image">
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -58,7 +63,6 @@
 </script>
 
 <style scoped>
-  
     .card {
         outline: rgb(255, 255, 255) solid 2px;
         background-color: rgb(151, 119, 71);
@@ -67,7 +71,7 @@
 
     .image {
         font-family: 'Patrick Hand', cursive;
-    
+
     }
 
 
